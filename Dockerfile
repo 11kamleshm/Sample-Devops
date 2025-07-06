@@ -3,7 +3,7 @@ COPY ./login.html /usr/local/apache2/htdocs
 COPY ./images /usr/local/apache2/htdocs
 COPY ./contact.html /usr/local/apache2/htdocs
 COPY ./videos /usr/local/apache2/htdocs
-COPY ./about.txt' /usr/local/apache2/htdocs
+COPY ./about.txt /usr/local/apache2/htdocs
 COPY ./index.html /usr/local/apache2/htdocs
 COPY ./password-reset.html /usr/local/apache2/htdocs
 COPY ./register.html /usr/local/apache2/htdocs
