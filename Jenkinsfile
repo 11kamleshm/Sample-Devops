@@ -21,11 +21,12 @@ pipeline{
 }
 }
 }
-		stage("Deploy on Kuberenetes"){
-		 steps{
-		  sh 'kubectl apply -f website-deployment.yaml'
-		  sh 'kubectl apply -f website-service.yaml'
-}
+		stage('Deploy on Kubernetes') {
+    		 steps {
+        	  withEnv(["KUBECONFIG=/etc/kubernetes/admin.conf"]) {
+            	  sh 'kubectl apply -f website-deployment.yaml'
+        }
+    }
 }
 }
 }
