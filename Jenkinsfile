@@ -26,6 +26,7 @@ pipeline{
                 // 👇 Yaha set karo KUBECONFIG
                 withEnv(["KUBECONFIG=/etc/kubernetes/admin.conf"]) {
                     sh 'kubectl apply -f website-deployment.yaml'
+		    sh 'kubectl apply -f service-deployment.yaml'
                 }
             }
 }
