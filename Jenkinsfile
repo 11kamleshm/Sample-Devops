@@ -22,11 +22,12 @@ pipeline{
 }
 }
 		stage('Deploy on Kubernetes') {
-    		 steps {
-        	  withEnv(["KUBECONFIG=/etc/kubernetes/admin.conf"]) {
-            	  sh 'kubectl apply -f website-deployment.yaml'
-        }
-    }
+    		  steps {
+                // 👇 Yaha set karo KUBECONFIG
+                withEnv(["KUBECONFIG=/etc/kubernetes/admin.conf"]) {
+                    sh 'kubectl apply -f website-deployment.yaml'
+                }
+            }
 }
 }
 }
